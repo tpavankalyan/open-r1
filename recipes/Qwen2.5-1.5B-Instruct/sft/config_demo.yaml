@@ -5,15 +5,15 @@ torch_dtype: bfloat16
 attn_implementation: flash_attention_2
 
 # Data training arguments
-dataset_name: GAIR/LIMO #HuggingFaceH4/Bespoke-Stratos-17k
+dataset_name: Pavankalyan/limo-formatted #HuggingFaceH4/Bespoke-Stratos-17k
 dataset_configs:
 - all
 preprocessing_num_workers: 8
 
 # SFT trainer config
 bf16: true
-do_eval: true
-eval_strategy: steps
+do_eval: false
+eval_strategy: 'no' #steps
 eval_steps: 100
 gradient_accumulation_steps: 8
 gradient_checkpointing: true
